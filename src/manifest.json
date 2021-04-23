@@ -1,0 +1,26 @@
+{
+    "name": "Youtube Chrome Extension",
+    "description": "Using ReactJS to build a Chrome youtube extension",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "icons": {
+        "16": "./icon-16x16.ico",
+        "32": "./icon-32x32.ico",
+        "48": "./icon-48x48.ico",
+        "128": "./icon-128x128.ico"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://*.youtube.com/*"],
+          "js": ["youtube.js"]
+        }
+      ],
+    "options_page": "./options.html",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "tabs",
+        "<all_urls>"
+    ]
+}
